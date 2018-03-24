@@ -1,0 +1,3 @@
+<% @messages.each do |m| %>
+  <div class="message-body"><%= m.user.email %>: <%= m.text %></div>
+<% end %>

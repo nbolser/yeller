@@ -1,0 +1,9 @@
+<%= form_for @message, remote: true, html: { class: 'message-form' } do |f| %>
+  <div class="field">
+    <br>
+    <div class="control">
+      <%= f.text_field :text, class: 'message-text input is-large', placeholder: 'Type a message...' %>
+    </div>
+  </div>
+  <%= f.submit "Send", class: 'submit-message button is-link' %>
+<% end %>

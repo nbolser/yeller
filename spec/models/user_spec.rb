@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   subject { User.new }
 
   it { is_expected.to be_a(User) }
+  it { is_expected.to have_many(:messages) }
 
   context 'User creation' do
     let(:password) { 'password' }
