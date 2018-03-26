@@ -7,9 +7,10 @@ class MessagesController < ApplicationController
   def create
     @message = current_user.messages.build(message_params)
     if @message.save
-      ActionCable.server.broadcast('room_channel', text: format_yells, user: @message.user.email)
+      ActionCable.server.broadcast('room_channel', text: @message.text, user: @message.user.email)
+      head :created
     else
-      render messages_path
+      head :unprocessable_entity
     end
   end
 
@@ -17,9 +18,5 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:text)
-  end
-
-  def format_yells
-    @message.text.upcase
   end
 end

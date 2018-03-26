@@ -13,10 +13,9 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 $(document).on 'turbolinks:load', ->
   submit_message()
 
-# TODO: Clean this up
 submit_message = () ->
   $('#message_text').on 'keydown', (event) ->
-    if event.keyCode is 13 && !event.shiftKey
+    if event.keyCode is 13
       event.preventDefault()
       $('.submit-message').click()
       event.target.value = ''
