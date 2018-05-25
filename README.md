@@ -44,6 +44,6 @@ $ bin/rails s
 
 Log in with seeded users and start chatting
 
-* `user1@example.com`
-* `user2@example.com`
-* `user3@example.com`
+* `user1@example.com \ password`
+* `user2@example.com \ password`
+* `user3@example.com \ password`
